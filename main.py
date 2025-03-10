@@ -7,6 +7,8 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Any, Optional
 
 from astrbot.api.event import filter, AstrMessageEvent
+# 添加正确的导入语句
+from astrbot.api.message_type import MessageType  # 导入 MessageType
 from astrbot.api.star import Context, Star, register
 import astrbot.api.message_components as Comp
 
