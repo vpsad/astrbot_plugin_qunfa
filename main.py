@@ -6,7 +6,7 @@ import time
 from datetime import datetime, timedelta
 from typing import List, Dict, Any, Optional
 
-from astrbot.api.event import filter, AstrMessageEvent, EventMessageType
+from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star, register
 import astrbot.api.message_components as Comp
 
@@ -477,7 +477,7 @@ class GroupSenderPlugin(Star):
         yield event.plain_result(help_text)
     
     # 监听群消息，用于收集群号
-    @filter.event_message_type(EventMessageType.GROUP)
+    @filter.event_message_type(MessageType.GROUP)  # 使用 MessageType 替代 EventMessageType
     async def on_group_message(self, event: AstrMessageEvent):
         '''监听群消息，用于收集群号'''
         # 这里不做任何处理，只是为了在后续版本中可能添加的功能预留
